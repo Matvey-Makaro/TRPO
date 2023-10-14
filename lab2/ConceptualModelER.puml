@@ -1,0 +1,170 @@
+@startuml
+' hide the spot
+' hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+' object "Сотрудник" as Employee
+' object "Руководитель" as Manager
+' object "Администратор" as Administrator
+' object "Проект" as Project
+' object "Задание" as Task
+' object "Отпуск" as Vacation
+' object "Командировка" as BusinessTrip
+' object "Отдел" as Department
+' object "Отчёт" as Report
+' object "Тип проекта" as ProjectType
+' object "Тип задачи" as TaskType
+' object "Рабочий график" as WorkSchedule
+' object "Праздники" as Holidays
+' object "Уведомление" as Notification
+' object "Должность" as Position
+
+entity User 
+{
+    PK user_id int NOT NULL
+    FK position_id int NOT NULL
+    FK department_id int NOT NULL
+    FK work_schedule_id int NOT NULL
+    name VARCHAR(45)
+    surname VARCHAR(45)
+    patronymic VARCHAR(45)
+    phone_num VARCHAR(13)
+    role ENUM('Admin', 'Manager', 'Employee') NOT NULL
+    login  VARCHAR(64)
+    password  VARCHAR(64) NOT NULL 
+}
+
+entity Project 
+{
+    PK project_id int NOT NULL
+    FK manager_id int
+    name
+}
+
+entity Task 
+{
+    PK task_id int NOT NULL
+    FK project_id int 
+    FK reporter_id int
+    FK assignee_id int
+    FK task_type_id int
+    name VARCHAR(100)
+    description VARCHAR(1000)
+    status ENUM('Open', 'Close', 'In progress', 'In review', 'Backlog')
+    creation_date DATETIME NOT NULL
+    time_spent int
+    time_given int
+    num_in_project int 
+}
+
+entity TaskType
+{
+    PK task_type_id int NOT NULL
+    name VARCHAR(100) NOT NULL
+}
+
+entity Vacation 
+{
+    PK vacation_id int NOT NULL
+    FK employee_id int NOT NULL
+    start DATETIME NOT NULL
+    end DATETIME NOT NULL
+    type ENUM('Working vacation', 'Unpaid leave'
+    , 'Paid leave', 'Maternity leave')
+    status
+}
+
+entity BusinessTrip
+{
+    PK business_trip_id int NOT NULL
+    start DATETIME NOT NULL
+    end DATETIME
+    order VARCHAR(200)
+    place VARCHAR(200)
+}
+
+entity Department
+{
+    PK department_id int NOT NULL
+    name VARCHAR(200) NOT NULL
+}
+
+entity Report
+{
+    PK report_id int NOT NULL
+    FK user_id int NOT NULL
+    date DATE NOT NULL
+    creation_time DATETIME NOT NULL
+    start_working_day TIME NOT NULL
+    end_working_day TIME NOT NULL
+}
+
+entity ReportItem
+{
+    PK report_item_id int NOT NULL
+    FK report_id int NOT NULL
+    FK task_id int
+    FK report_item_type_id int NOT NULL
+    start TIME NOT NULL
+    end TIME NOT NULL
+    text VARCHAR(100)
+}
+
+entity ReportItemType
+{
+    PK report_item_type_id int NOT NULL
+    name VARCHAR(100) NOT NULL
+    is_working_time BIT(1) NOT NULL
+}
+
+entity WorkSchedule
+{
+    PK work_schedule_id int NOT NULL
+    start DATETIME NOT NULL
+    is_flexible_schedule BIT(1) NOT NULL
+    num_of_working_seconds int NOT NULL
+    time_for_lunch TIME
+    lunch_duration_seconds int
+}
+
+entity Holidays
+{
+    PK holidays_id int NOT NULL
+    start DATE NOT NULL
+    end DATE
+    name VARCHAR(200) NOT NULL
+    is_day_off BIT(1) NOT NULL
+}
+
+entity Notification
+{
+    PK report_id int NOT NULL
+    text VARCHAR(400) NOT NULL
+}
+
+entity Position
+{
+    PK position_id int NOT NULL
+    name VARCHAR(100) NOT NULL
+}
+
+Task }o--o| Project
+Task }o--o| User
+Task }o--o| TaskType
+Task |o--o{ ReportItem
+
+User ||--o{ Vacation
+User }|--o{ BusinessTrip
+User }|--|| Department
+User }|--o{ Notification
+User }o--|| Position
+User ||--o{ Report
+User }|--|| WorkSchedule
+User ||--o{ Project
+
+Report ||--|{ ReportItem
+ReportItem }o--|| ReportItemType
+
+@enduml

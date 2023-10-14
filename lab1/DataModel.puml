@@ -1,0 +1,44 @@
+@startuml
+
+
+object "Сотрудник" as Employee
+object "Руководитель" as Manager
+object "Администратор" as Administrator
+object "Проект" as Project
+object "Задание" as Task
+object "Отпуск" as Vacation
+object "Командировка" as BusinessTrip
+object "Отдел" as Department
+object "Отчёт" as Report
+object "Тип проекта" as ProjectType
+object "Тип задачи" as TaskType
+object "Рабочий график" as WorkSchedule
+object "Праздники" as Holidays
+object "Уведомление" as Notification
+object "Должность" as Position
+
+Administrator -down-> Employee : CRUD
+Administrator -down-> Manager : CRUD
+Administrator -down-> Holidays : CRUD
+
+Manager -down-> Employee : руководит и является
+Manager -down-> Project : создает
+Manager -down-> Report: просматривает
+
+Employee -down-> Report : создает
+
+ProjectType -up-> Project
+TaskType -up-> Task
+Task -up-> Project
+
+Project -up-> Employee
+
+Department -up-> Employee
+WorkSchedule -up-> Employee
+Vacation -up-> Employee
+BusinessTrip -up-> Employee
+Notification -up-> Employee
+Position -up-> Employee
+
+
+@enduml
