@@ -1,0 +1,19 @@
+@startuml
+'scale 600 width
+
+state "Авторизация" as Authorization
+state "Главное окно" as MainWindow
+state "История отчетов" as ReportHistory
+state "Просмотр отчета" as Report
+
+[*] --> Authorization
+Authorization --> MainWindow : Пользователь авторизовался
+
+MainWindow --> ReportHistory : Пользователь открыл историю отчетов
+
+
+
+Завершения --> [*]
+
+
+@enduml
