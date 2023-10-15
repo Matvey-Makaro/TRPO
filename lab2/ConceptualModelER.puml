@@ -32,15 +32,15 @@ entity User
     patronymic VARCHAR(45)
     phone_num VARCHAR(13)
     role ENUM('Admin', 'Manager', 'Employee') NOT NULL
-    login  VARCHAR(64)
-    password  VARCHAR(64) NOT NULL 
+    login VARCHAR(64) NOT NULL
+    password VARCHAR(64) NOT NULL 
 }
 
 entity Project 
 {
     PK project_id int NOT NULL
     FK manager_id int
-    name
+    name VARCHAR(100)
 }
 
 entity Task 
@@ -73,7 +73,7 @@ entity Vacation
     end DATETIME NOT NULL
     type ENUM('Working vacation', 'Unpaid leave'
     , 'Paid leave', 'Maternity leave')
-    status
+    status ENUM
 }
 
 entity BusinessTrip
@@ -140,7 +140,7 @@ entity Holidays
 
 entity Notification
 {
-    PK report_id int NOT NULL
+    PK notification_id int NOT NULL
     text VARCHAR(400) NOT NULL
 }
 
