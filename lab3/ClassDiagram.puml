@@ -1,0 +1,255 @@
+@startuml
+
+left to right direction
+
+interface IAppCoreFacade
+{
+    T GetAll();
+    IUser GetCurrentUser();
+    SaveData(T);
+    UpdateData(T);
+}
+
+class AppCoreFacade
+{
+    T GetAll();
+    IUser GetCurrentUser();
+    SaveData(T);
+    UpdateData(T);
+
+    IDataProvider dataProvider;
+}
+
+interface IDataProvider
+{
+    QVector<T> GetAll();
+    T GetById();
+    Result Create(T);
+    Result Update(T);
+}
+
+class DataProvider
+{
+    QVector<T> GetAll();
+    T GetById();
+    Result Create(T);
+    Result Update(T);
+
+    IProjectLoader projectLoader;
+    ITaskLoader taskLoader;
+    IHolidayLoader holidayLoader;
+    IUserLoader userLoader;
+    IReportLoader reportLoader;
+    IPositionLoader positionLoader;
+    INotificationLoader notificationLoader;
+    IWorkScheduleLoader workScheduleLoader;
+    IDepartmentLoader departmentLoader;
+    IBusinessTripLoader businessTripLoader;
+    IVacationLoader vacationLoader;
+}
+
+interface IProject
+{
+    int64_t GetId();
+    IUser GetManager();
+    QString GetName();
+}
+
+interface ITask
+{
+    int64_t GetId();
+    IProject GetProject();
+    IUser GetReporter();
+    IUser GetAssignee();
+    TaskType GetTaskType();
+}
+
+interface IHoliday
+{
+    int64_t GetId();
+    Date GetStart();
+    Date GetEnd();
+    QVector GetName();
+    bool IsDayOff();
+}
+
+interface IUser
+{
+    int64_t GetId();
+    IPosition GetPosition();
+    IDepartment GetDepartment();
+    IWorkSchedule GetWorkSchedule();
+}
+
+interface IReport
+{
+    int64_t GetId();
+    IUser GetUser();
+    Date GetDate();
+    Time GetCreationTime();
+    Time GetStartWorkingDay();
+    Time GetEndWorkingDay();
+    QVector<IReportItem> GetItems();
+}
+
+interface IPosition
+{
+    int64_t GetId();
+    QString GetName();
+}
+
+interface INotification
+{
+    int64_t GetId();
+    QString GetText();
+}
+
+interface IWorkSchedule
+{
+    int64_t GetId();
+    Time GetStartTime();
+    Time GetEndTime();
+}
+
+interface IDepartment
+{
+    int64_t GetId();
+    QString GetName();
+}
+
+interface IBusinessTrip
+{
+    int64_t GetId();
+    Date GetStart();
+    Date GetEnd();
+    QString GetOrder();
+    QString GetPlace();
+}
+
+interface IVacation
+{
+    int64_t GetId();
+    IUser GetEmployee();
+    Date GetStart();
+    Date GetEnd();
+    VacationType GetType();
+    Status GetStatus();
+}
+
+interface IProjectLoader
+{
+    QVector<IProject> GetAll();
+    IProject GetById(int64_t id);
+    Result Create(IProject);
+    Result Update(IProject);
+}
+
+interface ITaskLoader
+{
+    QVector<ITask> GetAll();
+    ITask GetById(int64_t id);
+    Result Create(ITask);
+    Result Update(ITask);
+}
+
+interface IHolidayLoader
+{
+    QVector<IHoliday> GetAll();
+    IHoliday GetById(int64_t id);
+    Result Create(IHoliday);
+    Result Update(IHoliday);
+}
+
+interface IUserLoader
+{
+    QVector<IUser> GetAll();
+    IUser GetById(int64_t id);
+    Result Create(IUser);
+    Result Update(IUser);
+}
+
+interface IReportLoader
+{
+    QVector< IReport> GetAll();
+    IReport GetById(int64_t id);
+    Result Create(IReport);
+    Result Update(IReport);
+}
+
+interface IPositionLoader
+{
+    QVector<IPosition> GetAll();
+    IPosition GetById(int64_t id);
+    Result Create(IPosition);
+    Result Update(IPosition);
+}
+
+interface INotificationLoader
+{
+    QVector<INotification> GetAll();
+    INotification GetById(int64_t id);
+    Result Create(INotification);
+    Result Update(INotification);
+}
+
+interface IWorkScheduleLoader
+{
+    QVector<IWorkSchedule> GetAll();
+    IWorkSchedule GetById(int64_t id);
+    Result Create(IWorkSchedule);
+    Result Update(IWorkSchedule);
+}
+
+interface IDepartmentLoader
+{
+    QVector<IDepartment> GetAll();
+    IDepartment GetById(int64_t id);
+    Result Create(IDepartment);
+    Result Update(IDepartment);
+}
+
+interface IBusinessTripLoader
+{
+    QVector<IBusinessTrip> GetAll();
+    IBusinessTrip GetById(int64_t id);
+    Result Create(IBusinessTrip);
+    Result Update(IBusinessTrip);
+}
+
+interface IVacationLoader
+{
+    QVector<IVacation> GetAll();
+    IVacation GetById(int64_t id);
+    Result Create(IVacation);
+    Result Update(IVacation);
+}
+
+DataProvider ..|> IDataProvider
+AppCoreFacade ..|> IAppCoreFacade
+AppCoreFacade *-- DataProvider
+
+DataProvider *-- ITaskLoader
+DataProvider *-- IProjectLoader
+DataProvider *-- IHolidayLoader
+DataProvider *-- IUserLoader
+DataProvider *-- IReportLoader
+DataProvider *-- IPositionLoader
+DataProvider *-- INotificationLoader
+DataProvider *-- IWorkScheduleLoader
+DataProvider *-- IDepartmentLoader
+DataProvider *-- IBusinessTripLoader
+DataProvider *-- IVacationLoader
+
+ITask <.. ITaskLoader
+IProject <.. IProjectLoader
+IHoliday <.. IHolidayLoader
+IUser <.. IUserLoader
+IReport <.. IReportLoader
+IPosition <.. IPositionLoader
+INotification <.. INotificationLoader
+IWorkSchedule <.. IWorkScheduleLoader
+IDepartment <.. IDepartmentLoader
+IBusinessTrip <.. IBusinessTripLoader
+IVacation <.. IVacationLoader
+
+@enduml
