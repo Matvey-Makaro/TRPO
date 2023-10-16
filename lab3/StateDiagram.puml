@@ -1,19 +1,41 @@
 @startuml
 'scale 600 width
 
+state "Не авторизованное" as NotAuthorized
 state "Авторизация" as Authorization
-state "Главное окно" as MainWindow
-state "История отчетов" as ReportHistory
-state "Просмотр отчета" as Report
-
-[*] --> Authorization
-Authorization --> MainWindow : Пользователь авторизовался
-
-MainWindow --> ReportHistory : Пользователь открыл историю отчетов
-
+state "Авторизованное" as Authorized
+state "Просмотр данных" as ViewData
+state "Загрузка данных" as LoadData
+state "Редактирование/создание данных" as DataEditing
+state "Сохранение данных" as SaveData
+state "Ошибка" as Error
+state "Заверешния" as End
 
 
-Завершения --> [*]
+[*] --> NotAuthorized
+NotAuthorized --> Authorization: Пользователь нажал "войти"
+Authorization --> NotAuthorized: Авторизация закончилась неудачей
+Authorization --> Authorized: Авторизация прошла успешно
+Authorized --> LoadData: Начальная загрузка всех данных
+LoadData --> ViewData: Пользователь начинает просматривает данные
+ViewData --> DataEditing: Пользователь начинает редактировать/создавать данные
+DataEditing --> ViewData: Пользователь начинает просматривает данные
+DataEditing --> SaveData: Пользователь начинает сохранять данные
+DataEditing --> Error: Ошибка во время редактирования/создания
+Error --> DataEditing: Пользователь закрыл ошибку
+SaveData --> Error: Ошибка во время сохранения
+Error --> SaveData: Пользователь нажал "повторить"
+
+NotAuthorized --> End: Пользователь закрыл приложение
+Authorization --> End: Пользователь закрыл приложение
+Authorized --> End: Пользователь закрыл приложение
+ViewData --> End: Пользователь закрыл приложение
+LoadData --> End: Пользователь закрыл приложение
+DataEditing --> End: Пользователь закрыл приложение
+SaveData --> End: Пользователь закрыл приложение
+Error --> End: Пользователь закрыл приложение
+
+End --> [*]
 
 
 @enduml
