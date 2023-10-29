@@ -1,0 +1,15 @@
+@startuml
+
+' hide time-axis
+scale 5 as 200 pixels
+concise "Создание отчета" as CreateReport
+
+@CreateReport
+0 is "Запуск программы"
+5 is "Переход на вкладку создания отчета"
+12 is "Ввод отчета"
+20 is "Сохранение отчета"
+25 is "Простой"
+28 is {hidden}
+
+@enduml

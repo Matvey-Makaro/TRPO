@@ -1,0 +1,145 @@
+<mxfile host="app.diagrams.net" modified="2023-10-29T17:23:00.672Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="GCjC-MtQkOOEOoyhEGVo" version="22.0.8" type="device">
+  <diagram name="Page-1" id="7JhMTE_G0ca3Id6hJrlW">
+    <mxGraphModel dx="1238" dy="1834" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-1" value="Задача" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="301" y="57" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-2" value="Создатель задачи" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="159" y="148" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-3" value="Исполнитель" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="305" y="174" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-4" value="Тип задачи" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="458" y="152" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-5" value="Название" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="538" y="68" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-6" value="Описание" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="555" y="-20" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-7" value="Статус&lt;br&gt;задачи" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="473" y="-92" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-8" value="Дата создания" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="321" y="-88" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-9" value="Потраченное время" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="221" y="-85" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-10" value="Выделенное время" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="136" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-10" target="CHObUVIfxRuLcGLaCoJ7-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="85" y="179" as="sourcePoint" />
+            <mxPoint x="135" y="129" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-2" target="CHObUVIfxRuLcGLaCoJ7-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="212.5" y="115" as="sourcePoint" />
+            <mxPoint x="309.5" y="144" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-13" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-3" target="CHObUVIfxRuLcGLaCoJ7-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="247" y="183" as="sourcePoint" />
+            <mxPoint x="333" y="148" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-4" target="CHObUVIfxRuLcGLaCoJ7-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="421" y="324" as="sourcePoint" />
+            <mxPoint x="471" y="274" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-18" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-5" target="CHObUVIfxRuLcGLaCoJ7-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="468" y="87" as="sourcePoint" />
+            <mxPoint x="518" y="37" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-6" target="CHObUVIfxRuLcGLaCoJ7-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="436" y="89" as="sourcePoint" />
+            <mxPoint x="486" y="39" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-20" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-7" target="CHObUVIfxRuLcGLaCoJ7-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="382" y="77" as="sourcePoint" />
+            <mxPoint x="432" y="27" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-8" target="CHObUVIfxRuLcGLaCoJ7-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="70" y="152" as="sourcePoint" />
+            <mxPoint x="120" y="102" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-9" target="CHObUVIfxRuLcGLaCoJ7-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="81" y="158" as="sourcePoint" />
+            <mxPoint x="131" y="108" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-23" value="Статус&lt;br&gt;задачи" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="917" y="-119" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-24" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-25" target="CHObUVIfxRuLcGLaCoJ7-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="448" y="-153" as="sourcePoint" />
+            <mxPoint x="498" y="-203" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-25" value="Открыта" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="765" y="-5" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-26" value="Закрыта" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="900" y="-5" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-27" value="В процессе" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="1027" y="-2" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-28" value="На рассмотрении" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="1154" width="84" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-29" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-26" target="CHObUVIfxRuLcGLaCoJ7-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="915" y="187" as="sourcePoint" />
+            <mxPoint x="965" y="137" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-30" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-27" target="CHObUVIfxRuLcGLaCoJ7-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1026" y="213" as="sourcePoint" />
+            <mxPoint x="1076" y="163" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-31" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHObUVIfxRuLcGLaCoJ7-28" target="CHObUVIfxRuLcGLaCoJ7-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1138" y="166" as="sourcePoint" />
+            <mxPoint x="1188" y="116" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-32" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1197" y="60" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-33" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="802" y="51" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-35" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1067" y="57" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="CHObUVIfxRuLcGLaCoJ7-36" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="938" y="51" width="6" height="6" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

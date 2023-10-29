@@ -1,0 +1,126 @@
+@startuml
+
+' left to right direction
+
+object "app : Application" as App
+App : mainWindow = mainWindow
+App : appCoreFacade = appCoreFacade
+
+object "mainWindow : MainWindow" as MainWindow
+
+object "appCoreFacade: AppCoreFacade" as AppCoreFacade
+object "dataProvider: DataProvider" as DataProvider
+
+
+object "holiday : Holiday" as Holiday
+Holiday : start = "8.03.2023"
+Holiday : end = "8.03.2023"
+Holiday : name = "8 марта"
+Holiday : isDayOff = true
+
+object "department : Department" as Department
+Department : name = "Отдел разработки"
+
+object "position : Position" as Position
+Position : name = "инженер-программист"
+
+object "workSchedule : WorkSchedule" as WorkSchedule
+WorkSchedule : start = "8:00"
+WorkSchedule : isFlexibleSchedule = false
+WorkSchedule : numOfWorkingSeconds = 28800
+WorkSchedule : timeForLunch = "13:00"
+WorkSchedule : lunchDurationSeconds = 3600
+
+object "user : User" as User
+User : position
+User : department
+User : workSchedule
+User : name = "Александр"
+User : surname = "Рубель"
+User : patronymic = "Альбардович"
+User : phoneNum = "+375295959726"
+User : role = User
+
+object "project : Project" as Project
+Project : manager
+Project : name = "Hello world"
+
+object "task : Task" as Task
+Task : project
+Task : reporter
+Task : assignee
+Task : type = FEATURE
+Task : name = "Разработка компонента"
+Task : description = ""
+Task : status = IN_PROGRESS
+Task : creation_date = "10.10.2023"
+Task : time_spent = 7200
+Task : time_given = 10000
+Task : numInProject = 1
+
+
+object "reportItem : ReportItem" as ReportItem
+ReportItem : task
+ReportItem : typeName = "Разработка ПО"
+ReportItem : isWorkingTime = true
+ReportItem : start = "8:00"
+ReportItem : end = "13:00"
+ReportItem : text = "Написал тесты"
+
+
+object "report : Report" as Report
+Report : reportItems
+Report : date = "29.10.2023"
+Report : creationTime = "9:00"
+Report : startWorkingDay = "8:00"
+Report : endWorkingDay = "17:00"
+
+object "vacation : Vacation" as Vacation
+Vacation : user
+Vacation : start = "1.09.2023"
+Vacation : end = "10.09.2023"
+Vacation : type = LaborLeave
+Vacation : status = OK
+
+object "businessTrip : BusinessTrip" as BusinessTrip
+BusinessTrip : start = "01.08.2023"
+BusinessTrip : end = "02.08.2023"
+BusinessTrip : order = "Указ №10 от 28.07.2023"
+BusinessTrip : place = "г. Щучин"
+
+object "notification1 : Notification" as Notification1
+Notification1 : text = "Вам назначили новую задачу"
+
+object "notification2 : Notification" as Notification2
+Notification2 : text = "Вам одобрили заявку на отпуск"
+
+App o-- MainWindow
+App o-- AppCoreFacade
+
+AppCoreFacade *-- DataProvider
+AppCoreFacade *-- User
+AppCoreFacade *-- Holiday
+AppCoreFacade *-- Report
+AppCoreFacade *-- Vacation
+AppCoreFacade *-- Task
+AppCoreFacade *-- Project
+AppCoreFacade *-- Department
+AppCoreFacade *-- BusinessTrip
+AppCoreFacade *-- Notification1
+AppCoreFacade *-- Notification2
+
+
+User o-- Department
+User *-- Position
+User o-- WorkSchedule
+
+Task o-- User
+Task o-- Project
+
+Project o-- User
+
+Report *-- ReportItem
+ReportItem o-- Task
+
+
+@enduml
