@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-29T15:56:12.157Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="xb4vjG0CRBg-XOSgP9zS" version="22.0.8" type="device">
+<mxfile host="app.diagrams.net" modified="2023-10-30T16:28:18.788Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="uWjk0ZURtnB0cAfBoBUy" version="22.0.8" type="device">
   <diagram name="Page-1" id="b5b7bab2-c9e2-2cf4-8b2a-24fd1a2a6d21">
-    <mxGraphModel dx="2950" dy="2309" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2705" dy="2126" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -79,11 +79,11 @@
         </mxCell>
         <mxCell id="GNjQJB3ZmKTFabC5UJAe-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="324" y="968" as="sourcePoint" />
-            <mxPoint x="478" y="896" as="targetPoint" />
+            <mxPoint x="-594" y="483" as="sourcePoint" />
+            <mxPoint x="-440" y="411" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="324" y="1052" />
-              <mxPoint x="479" y="1052" />
+              <mxPoint x="-594" y="567" />
+              <mxPoint x="-439" y="567" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -175,6 +175,33 @@
             <mxPoint x="1287" y="896" as="sourcePoint" />
             <mxPoint x="1287" y="777" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="M0fWGhJO4kMYANSolcIa-1" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="999" y="447" as="sourcePoint" />
+            <mxPoint x="999" y="576" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M0fWGhJO4kMYANSolcIa-2" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;Правила &lt;br&gt;бизнес-логики&lt;br&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="482" width="124" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="M0fWGhJO4kMYANSolcIa-3" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1060" y="783" as="sourcePoint" />
+            <mxPoint x="1060" y="664" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M0fWGhJO4kMYANSolcIa-4" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;Ядро &lt;br&gt;приложения&lt;br&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="954" y="695" width="109" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="M0fWGhJO4kMYANSolcIa-5" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1009" y="457" as="sourcePoint" />
+            <mxPoint x="1009" y="586" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M0fWGhJO4kMYANSolcIa-6" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;Правила &lt;br&gt;бизнес-логики&lt;br&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="492" width="124" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
