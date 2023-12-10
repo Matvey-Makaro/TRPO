@@ -1,5 +1,7 @@
 @startuml
 
+left to right direction
+
 actor "Администратор" as Admin
 
 Admin --> (Авторизация)

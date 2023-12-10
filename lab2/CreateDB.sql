@@ -37,7 +37,7 @@ PRIMARY KEY(report_item_type_id)
 
 CREATE TABLE WorkSchedule (
 work_schedule_id INTEGER NOT NULL AUTO_INCREMENT,
-start_time DATETIME NOT NULL,
+start_time TIME NOT NULL,
 is_flexible_schedule BIT(1) NOT NULL,
 num_of_working_seconds INTEGER NOT NULL,
 time_for_lunch TIME,
@@ -87,6 +87,7 @@ FOREIGN KEY(work_schedule_id) REFERENCES WorkSchedule(work_schedule_id)
 CREATE TABLE Project (
 project_id INTEGER NOT NULL AUTO_INCREMENT,
 manager_id INTEGER NOT NULL,
+name VARCHAR(100),
 PRIMARY KEY(project_id ),
 FOREIGN KEY(manager_id) REFERENCES User(user_id)
 );
@@ -97,6 +98,13 @@ project_id INTEGER NOT NULL,
 reporter_id INTEGER NOT NULL,
 assignee_id INTEGER NOT NULL,
 task_type_id INTEGER NOT NULL,
+creation_date DATETIME NOT NULL,
+time_spent INTEGER,
+time_given INTEGER,
+num_in_project INTEGER,
+name VARCHAR(100),
+description VARCHAR(1000),
+status ENUM('Open', 'Close', 'In progress', 'In review', 'Backlog'),
 PRIMARY KEY(task_id ),
 FOREIGN KEY(project_id) REFERENCES Project(project_id),
 FOREIGN KEY(reporter_id) REFERENCES User(user_id),
@@ -157,3 +165,12 @@ PRIMARY KEY(user_notification_id),
 FOREIGN KEY(user_id) REFERENCES User(user_id),
 FOREIGN KEY(notification_id) REFERENCES Notification(notification_id)
 );
+
+CREATE VIEW UserInfo AS
+SELECT u.user_id, u.name, u.surname, u.patronymic, u.phone_num, u.role, u.login, u.password,
+p.name as position_name, d.name as department_name, ws.start_time as start_of_working_day,
+ws.num_of_working_seconds, ws.time_for_lunch, ws.lunch_duration_seconds, ws.is_flexible_schedule
+FROM User u
+INNER JOIN Positions p ON u.positions_id = p.positions_id
+INNER JOIN Department d ON u.department_id = d.department_id
+INNER JOIN WorkSchedule ws ON u.work_schedule_id = ws.work_schedule_id;

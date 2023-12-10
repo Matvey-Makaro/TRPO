@@ -19,12 +19,12 @@ skinparam linetype ortho
 ' object "Рабочий график" as WorkSchedule
 ' object "Праздники" as Holidays
 ' object "Уведомление" as Notification
-' object "Должность" as Position
+' object "Должность" as Positions
 
 entity User 
 {
     PK user_id int NOT NULL
-    FK position_id int NOT NULL
+    FK positions_id int NOT NULL
     FK department_id int NOT NULL
     FK work_schedule_id int NOT NULL
     name VARCHAR(45)
@@ -69,8 +69,8 @@ entity Vacation
 {
     PK vacation_id int NOT NULL
     FK employee_id int NOT NULL
-    start DATETIME NOT NULL
-    end DATETIME NOT NULL
+    start_time DATETIME NOT NULL
+    end_time DATETIME NOT NULL
     type ENUM('Working vacation', 'Unpaid leave'
     , 'Paid leave', 'Maternity leave')
     status ENUM
@@ -79,9 +79,9 @@ entity Vacation
 entity BusinessTrip
 {
     PK business_trip_id int NOT NULL
-    start DATETIME NOT NULL
-    end DATETIME
-    order VARCHAR(200)
+    start_time DATETIME NOT NULL
+    end_time DATETIME
+    order_name VARCHAR(200)
     place VARCHAR(200)
 }
 
@@ -107,8 +107,8 @@ entity ReportItem
     FK report_id int NOT NULL
     FK task_id int
     FK report_item_type_id int NOT NULL
-    start TIME NOT NULL
-    end TIME NOT NULL
+    start_time TIME NOT NULL
+    end_time TIME NOT NULL
     text VARCHAR(100)
 }
 
@@ -122,7 +122,7 @@ entity ReportItemType
 entity WorkSchedule
 {
     PK work_schedule_id int NOT NULL
-    start DATETIME NOT NULL
+    start_time TIME NOT NULL
     is_flexible_schedule BIT(1) NOT NULL
     num_of_working_seconds int NOT NULL
     time_for_lunch TIME
@@ -132,8 +132,8 @@ entity WorkSchedule
 entity Holidays
 {
     PK holidays_id int NOT NULL
-    start DATE NOT NULL
-    end DATE
+    start_time DATE NOT NULL
+    end_time DATE
     name VARCHAR(200) NOT NULL
     is_day_off BIT(1) NOT NULL
 }
@@ -144,9 +144,9 @@ entity Notification
     text VARCHAR(400) NOT NULL
 }
 
-entity Position
+entity Positions
 {
-    PK position_id int NOT NULL
+    PK positions_id int NOT NULL
     name VARCHAR(100) NOT NULL
 }
 
@@ -159,7 +159,7 @@ User ||--o{ Vacation
 User }|--o{ BusinessTrip
 User }|--|| Department
 User }|--o{ Notification
-User }o--|| Position
+User }o--|| Positions
 User ||--o{ Report
 User }|--|| WorkSchedule
 User ||--o{ Project
